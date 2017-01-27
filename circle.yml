@@ -30,3 +30,4 @@ deployment:
       - docker login -u $DOCKER_USER -p $DOCKER_PASS -e $DOCKER_EMAIL
       - docker build --rm=false -t gleptor/bimba .
       - docker push gleptor/bimba
+
