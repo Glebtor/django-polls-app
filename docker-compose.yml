@@ -3,13 +3,13 @@ services:
   app:
 #    build:
 #      context: ./src
-    image: doomatel/django-polls-webapp
+    image: gleptor/bimba
     depends_on:
       - database
       - redis
     entrypoint: /docker-entrypoint-api.sh
     env_file:
-      - ./env.public
+#      - ./env.public
       - ./env.private
     environment:
       - REDIS_CONNECTION_STRING=redis://redis/1
@@ -19,7 +19,7 @@ services:
   celery:
 #    build:
 #      context: ./src
-    image: doomatel/django-polls-webapp
+    image: gleptor/bimba
     depends_on:
       - app
       - database
